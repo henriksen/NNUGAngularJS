@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -10,6 +10,7 @@
     <link href="/Content/site.css" rel="stylesheet"/>
     <script src="/Scripts/modernizr-2.6.2.js"></script>
     <script src="/Scripts/angular.js"></script>
+    <script src="/app/js/controllers.js"></script>
 </head>
 <body>
     <header>
@@ -26,14 +27,17 @@
             </div>
         </div>
     </header>
-    <div id="body">
+    <div id="body" data-ng-controller="TaskCtrl">
         <section class="content-wrapper main-content clear-fix">
-            <div data-ng-app="">
-                <label>Name:</label>
-                <input type="text" data-ng-model="yourName" placeholder="Say yo name!"/>
-                <hr/>
-                <h3>Hello {{yourName}}</h3>
-            </div>
+           
+            <ul>
+                <li data-ng-repeat="task in tasks">
+                    {{task.name}}
+                </li>
+            </ul>
+            
+            
+
         </section>
     </div>
     <script src="/Scripts/jquery-1.9.1.js"></script>
