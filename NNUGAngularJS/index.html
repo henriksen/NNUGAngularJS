@@ -30,7 +30,10 @@
     <div id="body">
         <section class="content-wrapper main-content clear-fix">
             <h3>Du har {{tasks.length}} ting du skulle ha gjort!</h3>
-            <p>Søk: <input data-ng-model="query"/></p>
+            <p><label for="query">Søk: </label><input name="query" data-ng-model="query"/></p>
+            <p><label for="newTask">Ny oppgave:</label><input name="newTask" data-ng-model="newTask"/>
+                <button class="btn-primary" data-ng-click="add()" >Legg til</button>
+            </p>
             <ul>
                 <li data-ng-repeat="task in tasks | filter:query">
                     {{task.name}}

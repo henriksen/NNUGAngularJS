@@ -4,36 +4,23 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using NNUGAngularJS.Models;
 
 namespace NNUGAngularJS.Controllers
 {
-    public class ValuesController : ApiController
+    public class TaskController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<Task> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new Task[]
+                {
+                    new Task { Name="Do stuff"},
+                    new Task { Name="Do more stuff"},
+                    new Task { Name="Do all the stuff"},
+                };
         }
 
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
     }
 }
