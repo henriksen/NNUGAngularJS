@@ -28,8 +28,12 @@
     </header>
     <div id="body">
         <section class="content-wrapper main-content clear-fix">
-            
-
+            <div data-ng-app="">
+                <label>Name:</label>
+                <input type="text" data-ng-model="yourName" placeholder="Say yo name!"/>
+                <hr/>
+                <h3>Hello {{yourName}}</h3>
+            </div>
         </section>
     </div>
     <script src="/Scripts/jquery-1.9.1.js"></script>
