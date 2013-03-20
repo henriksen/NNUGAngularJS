@@ -15,7 +15,7 @@ namespace NNUGAngularJS.Controllers
         {
             return new Task[]
                 {
-                    new Task { Name="Do stuff"},
+                    new Task { Name="Do stuff", Done = true},
                     new Task { Name="Do more stuff"},
                     new Task { Name="Do all the stuff"},
                 };
