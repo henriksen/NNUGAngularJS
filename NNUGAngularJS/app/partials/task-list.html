@@ -11,5 +11,7 @@
     <li data-ng-repeat="task in tasks | filter:query">
         <input type="checkbox" data-ng-model="task.done" />
         <span class="done-{{task.done}}">{{task.name}}</span>
+        <a href="#/task/{{task.id}}"><i class="icon-pencil"></i></a>
+
     </li>
 </ul>
