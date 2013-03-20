@@ -176,7 +176,9 @@
   <ItemGroup>
     <Content Include="app\js\app.js" />
     <Content Include="app\js\controllers.js" />
+    <Content Include="app\partials\task-detail.html" />
     <Content Include="app\partials\task-list.html" />
+    <Content Include="app\services\services.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />

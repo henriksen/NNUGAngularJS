@@ -1,7 +1,6 @@
-﻿function TaskListCtrl($scope, $http) {
-    $http.get("/api/task").success(function(data) {
-        $scope.tasks = data;
-    });
+﻿function TaskListCtrl($scope, Task) {
+    
+    $scope.tasks = Task.query();
 
     $scope.add = function() {
         $scope.tasks.push({ name: $scope.newTask });

@@ -1,4 +1,4 @@
-﻿angular.module('taskmanager', []).
+﻿angular.module('taskmanager', ['taskmanagerServices']).
     config(['$routeProvider', function($routeProvider) {
         $routeProvider.
             when('/tasks', { templateUrl: 'app/partials/task-list.html', controller: TaskListCtrl }).
