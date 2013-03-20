@@ -1,0 +1,15 @@
+﻿<h3>Du har {{tasks.length}} ting du skulle ha gjort!</h3>
+<div>
+    <label for="query">Søk: </label>
+    <input name="query" data-ng-model="query" />
+</div>
+<div>
+    <label for="newTask">Ny oppgave:</label><input name="newTask" data-ng-model="newTask" />
+    <button class="btn btn-primary" data-ng-click="add()">Legg til</button>
+</div>
+<ul>
+    <li data-ng-repeat="task in tasks | filter:query">
+        <input type="checkbox" data-ng-model="task.done" />
+        <span class="done-{{task.done}}">{{task.name}}</span>
+    </li>
+</ul>
