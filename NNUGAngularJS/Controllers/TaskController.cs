@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -31,13 +32,12 @@ namespace NNUGAngularJS.Controllers
             _db.SaveChanges();
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]Task task)
+        // POST api/values/5
+        public void Post(int id, [FromBody]Task task)
         {
             var editedTask = _db.Tasks.Attach(task);
-            editedTask.Id = id;
+            _db.Entry(editedTask).State = EntityState.Modified;
             _db.SaveChanges();
-
         }
 
 

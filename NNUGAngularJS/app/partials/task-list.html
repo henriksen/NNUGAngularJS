@@ -1,17 +1,14 @@
 ﻿<h3>Du har {{tasks.length}} ting du skulle ha gjort!</h3>
-<div>
-    <label for="query">Søk: </label>
-    <input name="query" data-ng-model="query" />
-</div>
-<div>
-    <label for="newTask">Ny oppgave:</label><input name="newTask" data-ng-model="newTask" />
-    <button class="btn btn-primary" data-ng-click="add()">Legg til</button>
-</div>
+<p>Søk: <input data-ng-model="query"/></p>
+<p>Ny oppgave:<input data-ng-model="newTask"/> 
+    <button class="btn btn-primary" data-ng-click="add()" >Legg til</button>
+</p>
 <ul>
-    <li data-ng-repeat="task in tasks | filter:query">
-        <input type="checkbox" data-ng-model="task.done" />
+    <li data-ng-repeat="task in tasks | filter:query | orderBy:'name'">
+        <input type="checkbox" data-ng-model="task.done"
+            data-ng-click="finishIt(task)"
+            />
         <span class="done-{{task.done}}">{{task.name}}</span>
-        <a href="#/task/{{task.id}}"><i class="icon-pencil"></i></a>
-
+        <a href="#/tasks/{{task.id}}"><i class="icon-pencil"></i></a>
     </li>
 </ul>
